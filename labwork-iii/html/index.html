@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+<header class="header">
+
+    <h1 style="margin-top: 0; padding-top: 20px">laptop.shop.by</h1>
+    <h3>Ваши деньги - наши деньги</h3>
+
+</header>
+
+<div class="flex" style=" width: 80%; margin: 20px auto auto;">
+    <nav style="width: 15%">
+        <h2 class="contact-data">Навигация</h2>
+
+        <div class="contact-data">
+            <button onclick="modalNone()">Результаты в модальном окне</button>
+            <a href="index2.html">Результаты в новом окне</a>
+        </div>
+    </nav>
+    <article style="width: 65%">
+
+        <form id="form">
+            <div style="padding-left: 20px">
+                <h4>Контактная информация</h4>
+                <table style="padding: 0; margin: 0">
+                    <tr>
+                        <td><lable style="margin-right: 20px" for="username">Представьтесь</lable></td>
+                        <td><input oninput="validate(this)" id="username" size="30" placeholder="имя" type="text" pattern="[a-zA-Zа-яА-ЯёЁ]{1,40}" required>                        </td>
+                    </tr>
+                    <tr><td></td><td><p id="attention" class="display-none" style="color: red">разрешены только латинские</p></td></tr>
+                    <tr>
+                        <td><lable style="margin-right: 20px" for="email">Ваша почта</lable></td>
+                        <td><input  size="30" id="email" placeholder="почта" type="email" required></td>
+                    </tr>
+                </table>
+<input id="date" hidden>
+            </div>
+
+                <div class="contact-data">
+                <p>Выберите предпочтительные особенности ноутбука</p>
+                <table id="features" style="padding: 0; margin: 0">
+                    <tr>
+                        <td>
+                            <input id="gpu" type="checkbox">
+                            <lable  for="gpu">дискретная видеокарта</lable>
+                        </td>
+                        <td>
+                            <input id="ssd" type="checkbox">
+                            <lable for="ssd">ssd накопитель</lable>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input id="touch" type="checkbox">
+                            <lable for="touch">сенсорный экран</lable>
+
+                        </td>
+                        <td>
+                            <input id="light" type="checkbox">
+                            <lable for="light">подсветка клавиатуры</lable>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <div class="contact-data">
+                    <lable  for="purpose">Назначение</lable>
+                    <select id="purpose">
+                        <option>Серфинг интернета</option>
+                        <option>Игры / работа с графикой</option>
+                        <option>Требовательные программы</option>
+                    </select>
+                </div>
+                <div class="contact-data">
+                    <lable for="purpose">Выберите, что для вас предпочтительнее</lable><br>
+                    <input type="radio" id="radio1" name="contact" checked>
+                    <label for="radio1">Визуальная составляющая, удобство в использовании</label><br>
+                    <input type="radio" id="radio2" name="contact" value="Производительность">
+                    <label for="radio2">Производительность</label>
+                </div>
+                <div class="contact-data">
+                    <lable for="comment">Ваши комментарии</lable><br>
+                    <textarea maxlength="1024" style="width: 50%; height: 70px;resize: none;" id="comment" placeholder="ваши комментарии"></textarea>
+                </div>
+                <div class="contact-data">
+                    <button type="button" onclick="formReset()">отменить</button>
+                    <button onclick="setDate()" id="submit" type="submit" name="submitbutton" value="Submit">отправить</button>
+                </div>
+        </form>
+    </article>
+    <aside style="width: 15%; padding: 5px" >
+        <p class="aside "> Каждую минуту в мире умирают тысячи человек. Так поспешите же купить наши ноутбуки, пока вы не стали этими людьми.</p>
+    </aside>
+</div>
+<footer class="footer">
+    <p>By sialiaŭkaivan<br>GitHUB</p>
+    <a href="https://github.com/selyavkoivan">https://github.com/selyavkoivan</a>
+</footer>
+
+
+
+<article id="modal" class="modal modal-none">
+
+    <button style="position: absolute; right: -15px; top: -15px;" onclick="modalNone()">x</button>
+    <table id="table" style="width: 100%;border: black 2px solid; collapse: collapse;">
+            <tr>
+                <th>Имя</th>
+                <th>Почта</th>
+                <th>Предпочтительно</th>
+                <th>Назначение</th>
+                <th>Мощность или удобство</th>
+                <th>Комментарии</th>
+                <th>Опрос пройден</th>
+            </tr>
+        </table>
+
+</article>
+<script>
+
+    function validate(input)
+    {
+        if (/^[a-zA-Zа-яА-ЯёЁ]+$/i.test(input.value) || input.value.length === 0){
+            document.getElementById("attention").classList.add("display-none")
+            return
+        } else {
+            document.getElementById("attention").classList.remove("display-none")
+        }
+    }
+
+
+    function modalNone()
+    {
+        document.getElementById("modal").classList.toggle('modal-none');
+    }
+
+    var table = document.getElementById('table');
+    try {
+        var mainarr = JSON.parse(localStorage.getItem('laptop-survey')) || [];
+    } catch (error) {
+        var mainarr = [];
+    }
+
+    for (var i = 0; i < mainarr.length; i++) {
+        var tr = document.createElement('tr');
+        tr.innerHTML = "<td>" + mainarr[i].username + "</td>" + "<td>" + mainarr[i].email + "</td>" + "<td>" + mainarr[i].features + "</td>" + "<td>" + mainarr[i].purpose + "</td>"
+            + "<td>" + mainarr[i].radio + "</td>" + "<td>" + mainarr[i].comment + "</td>"  + "<td>" + mainarr[i].date + "</td>";
+        table.append(tr);
+    }
+
+    function formReset()
+    {
+        document.getElementById("username").value = ''
+        document.getElementById("email").value = ''
+        document.getElementById("gpu").checked = false
+        document.getElementById("ssd").checked = false
+        document.getElementById("touch").checked = false
+        document.getElementById("light").checked = false
+        document.getElementById("purpose").options[0].selected = true
+        document.getElementById("radio1").checked = true
+        document.getElementById("comment").value = ''
+    }
+    function setDate()
+    {
+        document.getElementById("date").value = new Date().toLocaleString()
+
+    }
+
+
+    email = document.getElementById("email")
+    username = document.getElementById("username")
+    gpu = document.getElementById("gpu")
+    ssd = document.getElementById("ssd")
+    touch = document.getElementById("touch")
+    light = document.getElementById("light")
+    purpose = document.getElementById("purpose")
+    radio1 = document.getElementById("radio1")
+    radio2 = document.getElementById("radio2")
+    comment = document.getElementById("comment")
+    date = document.getElementById("date")
+    form = document.getElementById("form")
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        let features = getFeatures()
+        let radio = getRadio()
+        MAINArray.push({username:username.value, email: email.value, comment: comment.value, features: features, purpose: purpose.value, radio: radio, date: date.value });
+        localStorage.setItem('laptop-survey', JSON.stringify(MAINArray));
+        location.reload()
+    })
+    function  getFeatures()
+    {
+        let features = ''
+        if(gpu.checked === true) features += 'дискретная видеокарта<br>'
+        if(ssd.checked === true) features += 'ssd<br>'
+        if(touch.checked === true) features += 'сенсорный экран<br>'
+        if(light.checked === true) features += 'подстветка клавиатуры<br>'
+        return features
+    }
+    function  getRadio()
+    {
+        if(radio1.checked === true) return 'Визуальная составляющая, удобство в использовании'
+        else if(radio2.checked === true) return 'производительность'
+        else return ''
+    }
+
+
+    try {
+        var MAINArray = JSON.parse(localStorage.getItem('laptop-survey')) || [];
+    } catch (error) {
+        var MAINArray = [];
+    }
+
+</script>
+</body>
+
+
+</html>

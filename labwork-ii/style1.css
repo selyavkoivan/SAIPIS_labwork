@@ -1,0 +1,137 @@
+body {
+
+    height: 3500px;
+    background: black;
+}
+
+#body {
+    height: 100%;
+    padding: 10px;
+    background: linear-gradient(to bottom, #3d005e, #ffffff);
+}
+
+#block1 {
+    margin-bottom: -20px;
+    animation: fill 10s linear infinite;
+
+}
+@keyframes fill {
+    from {
+        fill: rgb(131, 51, 114);
+    }
+    33% {
+        fill: rgb(0, 86, 255);
+    }
+    67% {
+        fill: rgb(255, 0, 0);
+    }
+    to {
+        fill: rgb(131, 51, 114);
+    }
+}
+#block2 {
+    border: 4px solid;
+    border-radius: 0px 0px 20px 20px;
+    padding: 10px 10px 90px 10px;
+    background: white;
+    animation: border 10s linear infinite;
+}
+
+@keyframes border {
+    from {
+        border-color: rgb(131, 51, 114);
+    }
+    33% {
+        border-color: rgb(0, 86, 255);
+    }
+    67% {
+        border-color: rgb(255, 0, 0);
+    }
+    to {
+        border-color: rgb(131, 51, 114);
+    }
+}
+
+a {
+    color: rgb(141, 0, 163);
+    font-size: 24px;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 900;
+    font-stretch: ultra-condensed;
+}
+
+p {
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+p:first-letter {
+    font-size: 26px;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
+p.text:after
+{
+    content: '';
+    position: absolute;
+    background-size: cover;
+    height: 75px;
+}
+
+p.text:nth-child(3n+1):after
+{
+    background-image: url(aska.jpg);
+    width: 120px;
+}
+p.text:nth-child(3n+2):after
+{
+    background-image: url(rey.jpg);
+    width: 75px;
+}
+p.text:nth-child(3n):after
+{
+    background-image: url(shinji.jpg);
+    width: 140px;
+}
+
+.romb {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    padding: 5px;
+}
+.romb:nth-child(3n+1)
+{
+    background: #fd6d93;
+}
+.romb:nth-child(3n+2)
+{
+    background: #cc179b;
+}
+.romb:nth-child(3n)
+{
+    background: #ff156a;
+}
+
+.blink {
+    font-size: 70px;
+    animation: blink 3s linear infinite;
+    text-decoration: none;
+}
+
+@keyframes blink {
+    from {
+        color: darkblue;
+    }
+    50% {
+        color: red;
+    }
+    to {
+        color: darkblue;
+    }
+}

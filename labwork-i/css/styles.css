@@ -1,0 +1,109 @@
+tr.first
+{
+
+    height: 50%;
+    border-width: 0;
+    background-origin: border-box;
+    background: url(../resources/night.jpg) center;
+    background-size: 100%;
+    opacity: 120%;
+
+}
+
+p.shadow
+{
+    text-shadow: 2px 1px 6px black, 0 0 1em black;
+}
+p.text-I
+{
+    font-family: "Arial Black";
+    font-size: 1.15rem;
+    color: wheat;
+}
+p.text-II
+{
+    font-family: "Arial Black";
+    font-size: 1.1rem;
+    color: wheat;
+}
+
+p.text-III
+{
+    font-size: 1.6rem;
+    font-family: 'Rubik One', sans-serif;
+}
+
+tr.second
+{
+    background-size: 100%;
+    background: linear-gradient(0deg, #808080, #53455a);
+}
+th.second
+{
+    background: url(../resources/sky-1.jpg) center;
+    background-size: 100%;
+}
+
+div.second
+{
+    background: linear-gradient(0deg, rgba(128, 128, 128, 0.4), rgba(83, 69, 90, 0.4));
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
+}
+
+.img { position: relative; }
+.first-img { top: 50px; left: 55px; z-index: 5; }
+.second-img { left: -120px; top: 25px; z-index: 2;}
+.third-img { left: -295px; z-index: 1; }
+.img:hover { z-index: 10; }
+
+.rocket {
+    z-index: 1;
+    height: 150px;
+    position: absolute;
+    animation-duration: 10s;
+    animation-name: flight;
+}
+@keyframes flight {
+    from {
+        filter: opacity(20%) saturate(10);
+        transform: rotate(180deg);
+        left: 25px;
+        top: -100px
+    }
+    33%
+    {
+        filter: opacity(70%) brightness(0.25);;
+        transform: rotate(100deg);
+        left: 45px;
+        top: 500px
+    }
+    66% {
+        filter: opacity(50%) contrast(160%);
+        transform: rotate(75deg);
+        left: 600px;
+        top: 550px;
+    }
+    to
+    {
+        filter: opacity(100%) grayscale(100%) saturate(1);
+        transform: rotate(80deg);
+        left: 1300px;
+        top: 400px;
+    }
+}
+
+
+
+.column {
+    column-width: 200px;
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid #ccc;
+}
+
+p[text-align = "justify"]
+{
+    color:red;
+}

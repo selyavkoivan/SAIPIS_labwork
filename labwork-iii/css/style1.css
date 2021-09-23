@@ -1,0 +1,83 @@
+footer.footer
+{
+    padding-bottom: 10px;
+    background: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid black;
+    text-align: center;
+}
+body{
+    background: white;
+}
+
+div.flex
+{
+    display: flex;
+    justify-content: space-between;
+}
+body
+{
+    margin: 0;
+}
+header.header
+{
+    text-align: center;
+    background: url("../resoursec/office.jpg") center;
+    background-size: 100%;
+    padding-bottom: 20px;
+}
+
+h1, h3
+{
+    font-family: Century;
+    color: dimgrey;
+}
+.contact-data
+{
+    padding-left: 20px;
+    padding-bottom: 20px;
+
+}
+.block
+{
+    padding: 5px;
+}
+
+nav, aside
+{
+    border: 10px solid;
+    border-image: linear-gradient(to right top, red, orange, yellow, green, skyblue, blue, purple);
+    border-image-slice: 1;
+}
+article
+{
+    border: 10px solid;
+    border-image: linear-gradient(to left top, red, orange, yellow, green, skyblue, blue, purple);
+    border-image-slice: 1;
+}
+.aside
+{
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 100px;
+}
+
+.modal
+{
+    background: white;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 70%;
+    min-width: 754px;
+    border: 10px solid;
+    border-image: linear-gradient(to left top, red, orange, yellow, green, skyblue, blue, purple);
+    border-image-slice: 1;
+    display: block;
+}
+.modal-none { display: none}
+.display-none { display: none}

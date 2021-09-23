@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+<header class="header">
+
+    <h1 style="margin-top: 0; padding-top: 20px">laptop.shop.by</h1>
+    <h3>Ваши деньги - наши деньги</h3>
+
+</header>
+
+<div class="flex" style=" width: 90%; margin: 20px auto 200px;">
+    <nav style="width: 15%">
+        <h2 class="contact-data">Навигация</h2>
+        <div class="contact-data">
+            <a href="index.html">Пройти опрос</a>
+        </div>
+        <div class="contact-data">
+            <a href="index2.html">Результаты</a>
+        </div>
+    </nav>
+    <article style="width: 75%">
+
+        <form>
+            <table id="table" style="width: 100%;border: black 10px solid; collapse: collapse;">
+                <tr>
+                    <th>Имя</th>
+                    <th>Почта</th>
+                    <th>Предпочтительно</th>
+                    <th>Назначение</th>
+                    <th>Мощность или удобство</th>
+                    <th>Комментарии</th>
+                    <th>Опрос пройден</th>
+                </tr>
+            </table>
+            <select onchange="selectColor(this)" id="select-color">
+                <option>
+                    <li>черный</li>
+                </option>
+                <option>
+                    <li>красный</li>
+                </option>
+                <option>
+                    <li>зеленый</li>
+                </option><option>
+                <li>синий</li>
+            </option><option>
+                <li>белый (зочем)</li>
+            </option>
+
+
+
+            </select>
+        </form>
+    </article>
+
+    <aside style="width: 10%; padding: 5px" >
+        <h3>Список пользователей</h3>
+        <ol id="list"></ol>
+    </aside>
+</div>
+<footer class="footer">
+    <p>By sialiaŭkaivan<br>GitHUB</p>
+    <a href="https://github.com/selyavkoivan">https://github.com/selyavkoivan</a>
+</footer>
+</body>
+</html>
+
+<script>
+    function selectColor(color)
+    {
+        let selectedColor = "#000000"
+        switch (color.value)
+        {
+            case "черный": selectedColor = "#000000"; break;
+            case "белый (зочем)": selectedColor = "#ffffff" ; break;
+            case "красный": selectedColor = "#ff0000" ; break;
+            case "зеленый": selectedColor = "#00ff00" ; break;
+            case "синий": selectedColor = "#0000ff" ; break;
+        }
+        document.getElementById("table").style.borderColor = selectedColor
+    }
+
+
+    var table = document.getElementById('table');
+    var list = document.getElementById('list');
+    try {
+        var mainarr = JSON.parse(localStorage.getItem('laptop-survey')) || [];
+    } catch (error) {
+        var mainarr = [];
+    }
+
+    for (var i = 0; i < mainarr.length; i++) {
+        var tr = document.createElement('tr');
+        tr.innerHTML = "<td>" + mainarr[i].username + "</td>" + "<td>" + mainarr[i].email + "</td>" + "<td>" + mainarr[i].features + "</td>" + "<td>" + mainarr[i].purpose + "</td>"
+            + "<td>" + mainarr[i].radio + "</td>" + "<td>" + mainarr[i].comment + "</td>"  + "<td>" + mainarr[i].date + "</td>";
+        table.append(tr);
+
+        var li = document.createElement('li');
+        li.innerHTML = mainarr[i].username
+        list.append(li)
+    }
+</script>

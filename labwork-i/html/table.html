@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>моя лаба))</title>
+</head>
+<style>
+    td, th {
+        border: 1px solid;
+        padding: 5px;
+        font-weight: normal;
+    }
+</style>
+<style>
+    ol.null-numbering {
+        list-style-type: none;
+        counter-reset: item;
+    }
+    li.number-brackets:before {
+        content: counter(item) ') ';
+        counter-increment: item;
+        margin-left: -3.6rem;
+    }
+
+    ol.null-numbering > li.letter-brackets::before {
+        content: attr(mark);
+        margin-left: -3.6rem;
+    }
+    ol.null-numbering > li.dash:before
+    {
+        content: '- ';
+    }
+
+
+    /******************************/
+
+
+    .letter li:nth-child(1)::before {content: 'a) ';}
+    .letter li:nth-child(2)::before {content: 'b) ';}
+
+
+</style>
+<style>
+    .text-I
+    {
+        font-style: italic;
+        color: #aa05cc;
+        text-decoration: underline;
+    }
+    .text-II
+    {
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    .text-III
+    {
+        font-size: 3rem;
+        color: deeppink;
+        font-stretch: ultra-expanded;
+    }
+    .text-IV
+    {
+        font-stretch: condensed;
+        color: rgb(22, 192, 65);
+    }
+    .text-V
+    {
+        font-family: Impact, fantasy;
+        color: blueviolet;
+    }
+
+
+
+</style>
+
+
+<body>
+
+
+    <div style="margin-top: 10%; text-align: left" >
+        <table style="width: 90%; height: 50%; margin: auto; border-collapse: collapse; background-color: yellow">
+            <caption><b>Название таблицы<br>Красивое</b></caption>
+            <tr>
+                <th rowspan="3" style="background-color: orange">
+                    <ol type="I">
+                        <li>
+                            <b><u>Завтрак</u>
+                            <ol type="A" style=" font-style: italic">
+                                <li>
+                                    Первый стол
+                                    <ol class="null-numbering" style="font-weight: normal; font-style: normal">
+                                        <li class="number-brackets">
+                                           Первое блюдо
+                                        </li>
+                                        <li class="number-brackets">
+                                            Второе блюдо
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Второй стол
+                                    <ol class="null-numbering" style="font-weight: normal; font-style: normal">
+                                        <li class="letter-brackets">
+                                            Первое блюдо
+                                        </li>
+                                        <li class="letter-brackets">
+                                            Второе блюдо
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                            </b>
+                        </li>
+                        <li>
+                            <b><u>Обед</u>
+                            <ol type="A" style=" font-style: italic">
+                                <li>
+                                    Первый стол
+                                    <ol style="font-weight: normal; font-style: normal">
+                                        <li style="margin-left: -2.6rem">
+                                            Первое блюдо
+                                        </li>
+                                        <li style="margin-left: -2.6rem">
+                                            Второе блюдо
+                                        </li>
+                                        <li style="margin-left: -2.6rem">
+                                            Третье блюдо
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Второй стол
+                                    <ol class="null-numbering" style="font-weight: normal; font-style: normal">
+                                        <li style="margin-left: -3.6rem; margin-top: 10px">
+                                            Первое блюдо
+                                        </li>
+                                        <li style="margin-left: -3.6rem; margin-top: 10px">
+                                            Второе блюдо
+                                        </li>
+                                    </ol>
+                                </li>
+                                </ol>
+                            </b>
+                            </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </th>
+                <th>
+                    <h1  style="color: darkred; text-align: right">Города США</h1>
+                </th>
+                <th rowspan="4">
+                    <div style="display: inline-block; width: 50%">
+                    <b>Крупнейшие города различных стран</b>
+                    <ol style="font-style: italic; font-weight: bold">
+                        <li>
+                            Россия
+                            <ol style="font-style: normal; font-weight: normal">
+                                <li><u style="color: blue">Москва</u></li>
+                                <li><u style="color: blue">Санкт-Петербург</u></li>
+                                <li><u style="color: blue">Новосибирск</u></li>
+                            </ol>
+                        </li>
+                        <li>
+                            США
+                            <ul type="disc" style="font-style: normal; font-weight: normal">
+                                <li>Нью-Йорк</li>
+                                <li>Лос-Анжелес</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    </div>
+                    <div style="display: inline-block; width: 40%">
+                        <img alt="hehe cat" style="height: 150px; width: 150px" src="https://sun9-83.userapi.com/impg/VdcytjPFu402nkg2VaZmYqR5sMDxJIN8RQSP5Q/IDHyFldzqcQ.jpg?size=300x338&quality=96&sign=abbac823ff10c7a32e45068db9549a05&type=album">
+                    </div>
+                </th>
+                <th>
+                    <h2 style="color: sandybrown; text-align: justify">Сос мыслом</h2>
+                </th>
+                <th rowspan="3">
+                    <img alt="не баг а фича" style="height: 150px; width: 150px" src="https://sun9-23.userapi.com/impg/0w1NoPBFlYH1yok2jNIeNy74i9Z_BFYAJDKGug/ompaeGZQCDA.jpg?size=1767x1920&quality=96&sign=6c3faa808bbfa6eb8eddb7b9d4459efa&type=album">
+
+                </th>
+                <th style="border-width: 5px">
+                        <img alt="служу союзу" style="width: 180px; height: 150px" src="https://sun9-37.userapi.com/impg/JSngLAXaRjSVjVdoRzeHwqipmYtR4OAhEN9bFg/W5W2_40kAE8.jpg?size=567x445&quality=96&sign=94fe26441ed3edb1037aa830c4fa17d0&type=album">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <b><u>США</u></b>
+                    <ol type="-" class="null-numbering" style="font-weight: normal; font-style: normal">
+                        <li class="dash" style="margin-top: 10px">
+                            Нью-Йорк
+                        </li>
+                        <li class="dash" style="margin-top: 10px">
+                            Лос-Анжелес
+                        </li>
+                    </ol>
+                </th>
+                <th>
+                    <p class="text-IV">МАРУСИЧ ТОП</p>
+                </th>
+                <th rowspan="2" style="border-width: 5px">
+                    <div style="display: inline-block; width: 50%">
+                        <p class="text-III">ШИРОКО</p>
+                    </div>
+                    <div style="display: inline-block; width: 40%">
+                    <b>Крупнейшие города различных стран</b>
+                    <ol style="font-style: italic; font-weight: bold">
+                        <li>
+                            Россия
+                            <ol style="font-style: normal; font-weight: normal">
+                                <li><u style="color: blue">Москва</u></li>
+                                <li><u style="color: blue">Санкт-Петербург</u></li>
+                                <li><u style="color: blue">Новосибирск</u></li>
+                            </ol>
+                        </li>
+                        <li>
+                            США
+                            <ul type="disc" style="font-style: normal; font-weight: normal">
+                                <li>Нью-Йорк</li>
+                                <li>Лос-Анжелес</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <p class="text-I">первый ТЕКСТ</p>
+                </th>
+                <th>
+                    <p class="text-V">ПЖ 10 ПЛИЗ</p>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <h3 style="color: coral; text-align: justify">Нижний левый край с выравниванием по ширине text-align: justify</h3>
+                </th>
+                <th colspan="3">
+                    <p class="text-II">Конец.</p>
+                </th>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+    var letters = "abcdefjhijklmnopqrstuvwxyz";
+    $.each($('ol'), function() {
+        var item = $(this).find('li');
+        item.each(function(i){
+            $(this).attr("mark", letters[i] + ")");
+        });
+    });
+
+</script>
+</html>
