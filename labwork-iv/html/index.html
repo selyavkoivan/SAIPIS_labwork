@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scripts.js"></script>
+</head>
+<body>
+<div style="width: 25%; margin: auto; display: flex;">
+<span style="margin: auto">
+<p >By sialiaŭkaivan</p>
+<p style="color: red">gItHUb</p><a target="_blank" href="https://github.com/selyavkoivan">https://github.com/selyavkoivan</a>
+</span>
+  <span style="margin: auto">
+    <a target="_blank" href="https://github.com/selyavkoivan"><img style="width: 100px; height: 100px; border-radius: 50%" src="../resources/1.jpg">
+  </a></span>
+</div>
+<div style="display: flex; width: 70%; margin:auto; background-color: #e8edff; border-radius: 20px; padding: 20px">
+    <div style=" width: 30%">
+    <div style="display: flex">
+      <label style="font-weight: bold" for="newEl">input new option</label>
+      <input style="margin-left: auto" id="newEl" type="text" maxlength="15" size="20">
+    </div>
+    <div style="display: flex">
+
+      <label style="font-weight: bold" for="select">select an option</label>
+    <select style="margin-left: auto; "  id="select">
+      <option>a</option>
+      <option>b</option>
+      <option>c</option>
+    </select>
+    </div>
+    <div>
+      <button onclick="deleteValue()" id="delete">delete</button>
+      <button onclick="insertValue()" id="insert">insert</button>
+    </div>
+    <div style="display: flex">
+      <label style="font-weight: bold" for="select-style">select style for the table</label>
+      <select style="margin-left: auto" id="select-style">
+        <option value="1">first style</option>
+        <option value="2">second style</option>
+        <option value="3">third style</option>
+      </select>
+    </div>
+    <div>
+      <button onclick="showValue()" id="show">show deleted options</button>
+    </div>
+    <div id="deleted-area" class="display-none">
+      <h3>table with options removed</h3>
+      <table id="table">
+      <tr>
+        <th>number</th>
+        <th>value</th>
+        <th>position</th>
+      </tr>
+    </table>
+      <h3>datalist with options removed</h3>
+    <input id="datalist-input" list="datalist">
+    <datalist  id="datalist"></datalist>
+    </div>
+    </div>
+<div style="margin-left: auto; width: 60%;  background: linear-gradient(to right, #e8edff, #f59cff);">
+
+</div>
+  </div>
+
+</body>
+</html>

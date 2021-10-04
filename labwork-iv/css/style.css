@@ -1,0 +1,69 @@
+.display-none
+{
+    display: none;
+}
+
+
+.first th {
+    font-weight: normal;
+    color: #039;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 8px;
+}
+.first td {
+    color: #669;
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+.first tr:hover td {
+    color: #6699ff;
+}
+
+.second th {
+    font-weight: normal;
+    color: #039;
+    padding: 10px 15px;
+}
+.second td {
+    color: #669;
+    border-top: 1px solid #e8edff;
+    padding: 10px 15px;
+}
+.second tr:nth-child(2n) {
+    background: #e8edff;
+}
+
+table.third {
+    border: 1px solid #6cf;
+}
+.third th {
+    font-weight: normal;
+    font-size: 13px;
+    color: #039;
+    text-transform: uppercase;
+    border-right: 1px solid #0865c2;
+    border-top: 1px solid #0865c2;
+    border-left: 1px solid #0865c2;
+    border-bottom: 1px solid white;
+    padding: 5px;
+}
+.third td {
+    color: #669;
+    border-right: 1px dashed #6cf;
+    padding: 10px 20px;
+}
+
+div
+{
+    padding: 15px;
+}
+button, input, select
+{
+    border: 2px black dashed;
+    border-radius: 5px;
+}
+button
+{
+    background: #c1dff8;
+    padding: 5px;
+}
