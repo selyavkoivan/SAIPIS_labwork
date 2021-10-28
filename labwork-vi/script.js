@@ -24,5 +24,5 @@ $("#btn-2").click(function(){
     $("p").each(function () {
         $(this).html( $(this).html().replace(/london/g,"parise") );
     });
-    $("#btn-1").fadeOut(0);
+    $("#btn-1").hide()
 });

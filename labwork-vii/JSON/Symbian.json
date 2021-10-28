@@ -1,0 +1,11 @@
+{
+  "name": "Symbian OS",
+  "company": "Nokia",
+  "modifications": [
+    "UIQ",
+    "Series 60",
+    "Series 80",
+    "MOAP",
+    "Symbian³"
+  ]
+}

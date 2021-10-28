@@ -9,28 +9,17 @@ class BuildingTools
         this.name = name
         this.price = price
         this.weight = weight
-    }
-   /* public set name(name) {
-        this.name = name
-    }
-    public set price(price) {
-        this.price = price
-    }
-    public set weight(weight) {
-        this.weight = weight
-    }
-    public get name() {
-        return this.name
-    }
-    public get ID() {
-        return this.ID
+        this.print()
     }
 
-    public get price() {
-        return this.price
+    print()
+    {
+        console.log(this.ID)
+        console.log(this.name)
+        console.log(this.price)
+        console.log(this.weight)
+
     }
-    public get weight() {
-        return this.weight
-    }*/
+
 }
 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+<div style="width: 25%; margin: auto; display: flex;">
+<span style="margin: auto">
+<p>By sialiaŭkaivan</p>
+<p style="color: red">gItHUb</p><a target="_blank" href="https://github.com/selyavkoivan">https://github.com/selyavkoivan</a>
+</span>
+    <span style="margin: auto">
+    <a target="_blank" href="https://github.com/selyavkoivan"><img
+            style="width: 100px; height: 100px; border-radius: 50%" src="resources/1.jpg" id="id1">
+  </a></span>
+</div>
+<div class="main-block">
+    <form method="post" action="/">
+        <div>
+            <label>Введите ФИО</label>
+            <textarea required name="FullName"></textarea>
+        </div>
+        <div>
+            <label>Введите адрес</label>
+            <textarea required name="address"></textarea>
+        </div>
+        <div>
+            <label>Введите адрес почты</label>
+            <textarea style="margin-left: auto" required name="mail"></textarea>
+        </div>
+        <div>
+            <label>Введите номер телефон</label>
+            <textarea name="phoneNumber"></textarea>
+        </div>
+        <div>
+            <label>Введите ваши комментарии</label>
+            <textarea name="comment"></textarea>
+        </div>
+        <div>
+            <label>Понравилось ли вам предоставленные услуги</label>
+            <input type="radio" name="radio" value="yes" checked/>
+            <label>Да</label>
+            <input type="radio" name="radio" value="no"/>
+            <label>Нет</label>
+        </div>
+        <div>
+            <input type="checkbox" name="personal"/>
+            <label>Приятный персонал</label>
+            <input type="checkbox" name="service"/>
+            <label>Быстрое обслуживание</label>
+        </div>
+        <div>
+            <label>Поставьте оценку</label>
+            <select name="rate">
+                <option>5</option>
+                <option>4</option>
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+            </select>
+        </div>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div style="margin-left: auto">
+        <div>
+            <label>Введите ФИО</label>
+            <textarea disabled id="FullName"></textarea>
+        </div>
+        <div>
+            <label>Введите адрес</label>
+            <textarea disabled id="address"></textarea>
+        </div>
+        <div>
+            <label>Введите адрес почты</label>
+            <textarea disabled id="mail"></textarea>
+        </div>
+        <div>
+            <label>Введите номер телефон</label>
+            <textarea disabled id="phoneNumber"></textarea>
+        </div>
+        <div>
+            <label>Введите ваши комментарии</label>
+            <textarea disabled id="comment"></textarea>
+        </div>
+        <div>
+            <label>Понравилось ли вам предоставленные услуги</label>
+            <input disabled type="radio" id="yes"/>
+            <label>Да</label>
+            <input disabled type="radio" id="no"/>
+            <label>Нет</label>
+        </div>
+        <div>
+            <input disabled type="checkbox" id="personal"/>
+            <label>Приятный персонал</label>
+            <input disabled type="checkbox" id="service"/>
+            <label>Быстрое обслуживание</label>
+        </div>
+        <div>
+            <label>Поставьте оценку</label>
+            <select disabled id="rate"></select>
+        </div>
+        <button type="submit" id="receive">Отправить</button>
+    </div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../js/script.js"></script>
+</html>

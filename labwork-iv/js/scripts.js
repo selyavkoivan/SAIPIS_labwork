@@ -1,7 +1,7 @@
 function deleteValue(){
-    var select = document.getElementById("select")
+    const select = document.getElementById("select")
 
-    var option = document.createElement('option');
+    const option = document.createElement('option');
     option.value = select.value;
     document.getElementById("datalist").appendChild(option)
 

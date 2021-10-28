@@ -17,23 +17,28 @@ function insertValue()
     var newTools = new BuildingTools(document.getElementById("name").value,
         document.getElementById("price").value,
         document.getElementById("weight").value)
+    var map = new Map()
+    map.set(1, newTools)
     if(document.cookie === "") {
+
         db.transaction((tx) => {
-                tx.executeSql('INSERT INTO BuildingTools (name, price, weight) VALUES (?, ?, ?);', [newTools.name, newTools.price, newTools.weight])
+                tx.executeSql('INSERT INTO BuildingTools (name, price, weight) VALUES (?, ?, ?);', [map.get(1).name, map.get(1).price, map.get(1).weight])
             },
             () => alert("ошибка добавления"),
-            () => alert("запись успешно добавлена"))
+            () => alert("запись успешно добавлена1"))
     }
 else
     {
-        newTools.customerAddress = document.getElementById("customerAddress").value
+
+        map.get(1).customerAddress = document.getElementById("customerAddress").value
+
         db.transaction((tx) => {
-                tx.executeSql('INSERT INTO BuildingTools (name, price, weight, customerAddress) VALUES (?, ?, ?, ?);', [newTools.name, newTools.price, newTools.weight, newTools.customerAddress])
+                tx.executeSql('INSERT INTO BuildingTools (name, price, weight, customerAddress) VALUES (?, ?, ?, ?);', [map.get(1).name, map.get(1).price, map.get(1).weight, map.get(1).customerAddress])
             },
             () => alert("ошибка добавления"),
-            () => alert("запись успешно добавлена"))
+            () => alert("запись успешно добавлена2"))
     }
-    alert("запись успешно добавлена")
+
     addOption()
 
 }
