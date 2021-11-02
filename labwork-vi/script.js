@@ -1,28 +1,18 @@
-$("#btn-1").click(function(){
+$("#btn-1").click(function () {
     $("#id1").addClass("border")
     $(".class-2").fadeOut("slow");
     $(".class-4").fadeOut("slow");
     $(".class-6").fadeOut("slow");
-
-
-
 });
-$("#btn-2").click(function(){
-    $("input").fadeOut(0);
-    $(".class-1").append('<input>', {
-        type: 'text',
-        id: 'newId1'
-    })
-    $(".class-3").append('<input>', {
-        type: 'text',
-        id: 'newId3'
-    })
-    $(".class-5").append('<input>', {
-        type: 'text',
-        id: 'newId5'
-    })
+$("#btn-2").click(function () {
+    if (!$("#newId1").attr("type")) {
+        for(i = 1; i <= 5; i +=2)
+        {
+            $(".class-" + i).append('<input type="text" id="newId' + i + '"/>')
+        }
+    }
     $("p").each(function () {
-        $(this).html( $(this).html().replace(/london/g,"parise") );
+        $(this).html($(this).html().replace("london", "parise"))
     });
     $("#btn-1").hide()
 });

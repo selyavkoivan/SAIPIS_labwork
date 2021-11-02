@@ -1,0 +1,43 @@
+extends index
+
+block title
+    title #{title}
+
+
+block content
+    div(style="width: 70%;").blue-area
+        a(href='/')
+            p(style="text-align:center") Назад
+        if letter.length > 0
+            div
+                table#result
+                    tr
+                        th Отправитель
+                        th Получатель
+                        th Дата отправки
+                        th Тип письма
+                        th Удалить?
+                        th Изменить
+                    each val in letter
+                        tr
+                            td #{val.sender}
+                            td #{val.receiver}
+                            td #{val.date}
+                            td #{val.type}
+                            td
+                                input(type="checkbox" name="delete-letter" value=val._id)
+                            td
+                                input(type="radio" name="update-letter" value=val._id)
+            div(style="margin:auto; width: 60%")
+                button(id="removeBtn" style="margin-right: 30px;") remove selected letters
+                input(type="submit" class="blue-back" id="updateBtn" value="update selected letter")
+                div
+                    input(type="datetime-local" style="margin-right: 30px;" max="9999-12-31T23:59" name=" dateFilter" id="dateFilter")
+                    input(type="submit" class="blue-back" style="margin-right: 30px;" id="filterBtn" value="filter by date")
+                    select(class="display-none" id="displaySenders")
+                div
+                    input(type="checkbox" style="margin-right: 30px;" name="typeFilter" id="typeFilter")
+                    input(type="submit" class="blue-back" style="margin-right: 30px;" id="filterTypeBtn" value="filter by type")
+                    select(class="display-none" id="displayReceivers")
+        else
+            h2 Нет учеников

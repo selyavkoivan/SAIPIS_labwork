@@ -1,0 +1,41 @@
+.display-none {
+    display: none;
+}
+
+.blue-area {
+
+    margin: auto;
+    background-color: #bde7f5;
+    border-radius: 20px;
+    padding: 30px;
+}
+table {
+    margin: auto;
+}
+table th {
+    font-weight: normal;
+    color: #ff1f1f;
+    border-bottom: 2px solid #ff1818;
+    padding: 10px 8px;
+}
+table td {
+    color: #ff7474;
+    padding: 9px 8px;
+    transition: .3s linear;
+    font-weight: bold;
+}
+table tr:hover td {
+    color: #fc2222;
+}
+
+button, input, select
+{
+    border: 2px black dashed;
+    border-radius: 5px;
+
+}
+button, .blue-back
+{
+    background: #c1dff8;
+    padding: 5px;
+}

@@ -1,0 +1,23 @@
+extends index
+
+block title
+    title #{title}
+
+block content
+    div(style="width: 40%;").blue-area
+        form(action="/" method="post" style="margin:auto; width: 60%")
+            div
+                div
+                    input(type="text" name="sender" id="sender" placeholder="Отправитель")
+                div
+                    input(type="text" name="receiver" id="receiver" placeholder="Получатель")
+                div
+                    label Заказное
+                        input(type="checkbox" name="type" id="type")
+                div
+                    label Дата отправки<br>
+                    input(type="datetime-local" max="9999-12-31T23:59" name="date" id="date")
+
+            input(type="button" class="blue-back" id="addBtn" value="Добавить")
+        form(action="/show" method="post" style="margin:auto; width: 60%")
+            input(type="submit" class="blue-back" id="showBtn" value="Просмотреть")
